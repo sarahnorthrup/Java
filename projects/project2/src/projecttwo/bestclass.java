@@ -24,7 +24,7 @@ public class bestclass {
         int i, guess;
 
         System.out.println(
-                "Well," + name + ", I am thinking of a number between 1 and 20." + "Take a guess."
+                "Well," + name + ", I am thinking of a number between 1 and 20." + "Take a guess"
                         + " within 6 trys.");
 
         // Iterate over 6 Trys
