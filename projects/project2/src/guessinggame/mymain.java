@@ -1,11 +1,11 @@
-package projecttwo;
+package guessinggame;
 
 import java.util.Scanner;
 
-public class bestclass {
+public class mymain {
     static Scanner sc = new Scanner(System.in);
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
 
 
 //output
@@ -22,14 +22,14 @@ public class bestclass {
         int K = 6;
 
         int i, guess;
-
+//output
         System.out.println(
                 "Well," + name + ", I am thinking of a number between 1 and 20." + "Take a guess"
                         + " within 6 trys.");
 
         // Iterate over 6 Trys
         for (i = 0; i < K; i++) {
-
+//output
             System.out.println(
                     "Guess the number:");
 
@@ -41,36 +41,37 @@ public class bestclass {
 
                 int b = 1;
                 int sums = i + b;
+                //output
                 System.out.println(
                         "Good job," + name
                                 + " You guessed the number in " + sums + " guesses");
-
+//output
                 System.out.println("Would you like to play again? (y or n)");
 
 
                 String yesrno = sc.nextLine();
 
-                if (yesrno.equals("y"))
-                {
+                if (yesrno.equals("y")) {
                     guessclass newobject = new guessclass();
                     newobject.main();
 
-                }
-                else if (yesrno.equals("n")) {
+                } else if (yesrno.equals("n")) {
+                    //output
                     System.out.println("Have a nice day!");
                     System.exit(0);
 
                 }
 
 
-
             } else if (number > guess
                     && i != K - 1) {
                 System.out.println(
+                        //output
                         "The number is "
                                 + "greater than " + guess);
             } else if (number < guess
                     && i != K - 1) {
+                //output
                 System.out.println(
                         "The number is"
                                 + " less than " + guess);
@@ -79,28 +80,29 @@ public class bestclass {
 
         if (i == K) {
             System.out.println(
+                    //output
                     "You have exhausted " + '6' + " trys.");
 
             System.out.println(
+                    //output
                     "The number was " + number);
         }
     }
 
 
     {
+        //output
         System.out.println("Would you like to play again? (y or n)");
 
         String yesrno = sc.nextLine();
 
 
-
-        if (yesrno.equals("y"))
-        {
+        if (yesrno.equals("y")) {
             guessclass newobject = new guessclass();
             newobject.main();
 
-        }
-        else if (yesrno.equals("n")) {
+        } else if (yesrno.equals("n")) {
+            //output
             System.out.println("Have a nice day!");
             System.exit(0);
 

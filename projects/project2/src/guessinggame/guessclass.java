@@ -1,28 +1,24 @@
-package projecttwo;
+package guessinggame;
 
 import java.util.Scanner;
 
 public class guessclass {
-//main
+    //main
     public static void main() {
         //object of guessclass
-//guessclass newobject= new guessclass();
-        Scanner scan= new Scanner(System.in);
 
+        Scanner scan = new Scanner(System.in);
 
 
 //output
         System.out.println("Hello! What is your name?");
 //name input
-        String name= scan.nextLine();
-        //output+name
-        //System.out.println("Well,"+name+", I am thinking of a number between 1 and 20."+"Take a guess.");
-        //scan for guess
-//int guessa=scan.nextInt();
+        String name = scan.nextLine();
+
         Scanner sc = new Scanner(System.in);
 
         // Generate the numbers
-        int number = 1 + (int)(20
+        int number = 1 + (int) (20
                 * Math.random());
 
         // Given 6 trys
@@ -31,7 +27,7 @@ public class guessclass {
         int i, guess;
 
         System.out.println(
-                "Well,"+name+", I am thinking of a number between 1 and 20."+"Take a guess."
+                "Well," + name + ", I am thinking of a number between 1 and 20." + "Take a guess."
                         + " within 6 trys.");
 
         // Iterate over 6 Trys
@@ -46,17 +42,15 @@ public class guessclass {
             // If the number is guessed
             if (number == guess) {
                 System.out.println(
-                        "Good job,"+name
+                        "Good job," + name
                                 + " You guessed the number.");
                 break;
-            }
-            else if (number > guess
+            } else if (number > guess
                     && i != K - 1) {
                 System.out.println(
                         "The number is "
                                 + "greater than " + guess);
-            }
-            else if (number < guess
+            } else if (number < guess
                     && i != K - 1) {
                 System.out.println(
                         "The number is"
@@ -66,21 +60,14 @@ public class guessclass {
 
         if (i == K) {
             System.out.println(
-                    "You have exhausted"+'6'+" trys.");
+                    "You have exhausted" + '6' + " trys.");
 
             System.out.println(
                     "The number was " + number);
 
-//            // Driver Code
-//            public static void
-//            main(String arg[])
-//            {
-//
-//                // Function Call
-//                guessingNumberGame();
+
         }
     }
-
 
 
 }
