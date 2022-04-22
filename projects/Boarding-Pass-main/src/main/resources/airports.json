@@ -1,0 +1,118 @@
+{
+  "Data": {
+    "airport1": {
+      "abbrev": "HEL",
+      "timezone": "GMT+3",
+      "country": "Finland",
+      "city": "Helsinki"
+    },
+    "airport2": {
+      "abbrev": "KIX",
+      "timezone": "GMT+9",
+      "country": "Japan",
+      "city": "Osaka"
+    },
+    "airport3": {
+      "abbrev": "OPO",
+      "timezone": "GMT+1",
+      "country": "Portugal",
+      "city": "Porto"
+    },
+    "airport4": {
+      "abbrev": "BKK",
+      "timezone": "GMT+7",
+      "country": "Thailand",
+      "city": "Bangkok"
+    },
+    "airport5": {
+      "abbrev": "BSB",
+      "timezone": "GMT-3",
+      "country": "Brazil",
+      "city": "Brasilia"
+    },
+    "airport6": {
+      "abbrev": "UPG",
+      "timezone": "GMT+8",
+      "country": "Indonesia",
+      "city": "Makassar"
+    },
+    "airport7": {
+      "abbrev": "MLA",
+      "timezone": "GMT+2",
+      "country": "Malta",
+      "city": "Valletta"
+    },
+    "airport8": {
+      "abbrev": "WRO",
+      "timezone": "GMT+2",
+      "country": "Poland",
+      "city": "Wroclaw"
+    },
+    "airport9": {
+      "abbrev": "LWO",
+      "timezone": "GMT+3",
+      "country": "Ukraine",
+      "city": "Lviv Obast"
+    },
+    "airport11": {
+      "abbrev": "CCP",
+      "timezone": "GMT-4",
+      "country": "Chile",
+      "city": "Concepcion"
+    },
+    "airport12": {
+      "abbrev": "DAL",
+      "timezone": "GMT-5",
+      "country": "USA",
+      "city": "Dallas"
+    },
+    "airport13": {
+      "abbrev": "SNA",
+      "timezone": "GMT-7",
+      "country": "USA",
+      "city": "Greater Los Angeles"
+    },
+    "airport14": {
+      "abbrev": "TPA",
+      "timezone": "GMT-4",
+      "country": "USA",
+      "city": "Tampa"
+    },
+    "airport15": {
+      "abbrev": "ADB",
+      "timezone": "GMT+3",
+      "country": "Turkey",
+      "city": "Izmir"
+    },
+    "airport16": {
+      "abbrev": "ATH",
+      "timezone": "GT+3",
+      "country": "Greece",
+      "city": "Athens"
+    },
+    "airport17": {
+      "abbrev": "CCU",
+      "timezone": "GMT+5",
+      "country": "India",
+      "city": "KolKata"
+    },
+    "airport18": {
+      "abbrev": "HND",
+      "timezone": "GMT+9",
+      "country": "Japan",
+      "city": "Tokyo"
+    },
+    "airport19": {
+      "abbrev": "HKG",
+      "timezone": "GMT+8",
+      "country": "China",
+      "city": "Hong Kong"
+    },
+    "airport20": {
+      "abbrev": "SIN",
+      "timezone": "GMT+8",
+      "country": "Singapore",
+      "city": "Changi"
+    }
+  }
+}
