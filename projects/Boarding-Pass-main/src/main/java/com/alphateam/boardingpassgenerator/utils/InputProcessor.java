@@ -3,10 +3,14 @@ package com.alphateam.boardingpassgenerator.utils;
 // this class will handle the receiving, formatting, and storing of user input data
 import com.alphateam.boardingpassgenerator.enums.Airport;
 import com.alphateam.boardingpassgenerator.enums.InputField;
+import com.alphateam.boardingpassgenerator.enums.Month;
+
+import javax.swing.*;
 
 import static com.alphateam.boardingpassgenerator.gui.GuiInitVariables.*;
 import static com.alphateam.boardingpassgenerator.gui.utils.AirportDataImporter.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -80,14 +84,54 @@ public class InputProcessor {
         price = age <= 12f
                 ? price * .5f
                 : age >= 60f
-                ? price * .6f
+                ? price * (1 - .6f)
                 : price;
 
         price = gender.equals("F")
-                ? price * .25f
+                ? price * (1 - .25f)
                 : price;
 
         return price;
+    }
+
+    public static float calculatePrice() {
+        LocalDate dateOfBirth = LocalDate.of(
+                Integer.parseInt(dobYearField.getSelectedItem().toString()),
+                Month.valueOf(dobMonthField.getSelectedItem()
+                                .toString()
+                                .toUpperCase())
+                        .ordinal()
+                        + 1,
+                Integer.parseInt(dobDateField.getSelectedItem().toString()));
+        int currentAge = dateOfBirth.until(LocalDate.now()).getYears();
+
+        int originOffset = Integer.parseInt(airports.get(originField.getSelectedItem().toString()).get(Airport.TIMEZONE));
+        int arrivalOffset = Integer.parseInt(airports.get(destinationField.getSelectedItem().toString()).get(Airport.TIMEZONE));
+        int difference = Math.abs((originOffset - arrivalOffset));
+        float price = 40 * difference;
+
+        price = currentAge <= 12f
+                ? price * .5f
+                : currentAge >= 60f
+                ? price * (1 - .6f)
+                : price;
+
+
+        if (genderButtonGroup.getSelection() != null) {
+            String gender;
+            Enumeration<AbstractButton> enumerator = genderButtonGroup.getElements();
+            while (enumerator.hasMoreElements()) {
+                AbstractButton radioButton = enumerator.nextElement();
+                if (radioButton.isSelected()) {
+                    price = String.valueOf(radioButton.getText().charAt(0)).equals("F")
+                            ? price * (1 - 0.25f)
+                            : price;
+                }
+            }
+        }
+
+        return price;
+
     }
 
     private void calculateDepartureArrival(LocalDateTime date) {

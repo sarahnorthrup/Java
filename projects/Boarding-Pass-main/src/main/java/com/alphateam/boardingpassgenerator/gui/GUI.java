@@ -8,6 +8,8 @@ import javax.swing.plaf.basic.BasicComboBoxRenderer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,6 +18,7 @@ import java.util.Map;
 
 import static com.alphateam.boardingpassgenerator.gui.GuiInitVariables.*;
 import static com.alphateam.boardingpassgenerator.gui.utils.DataValidator.validationResults;
+import static com.alphateam.boardingpassgenerator.utils.InputProcessor.calculatePrice;
 
 public class GUI extends JFrame implements ActionListener {
 
@@ -181,12 +184,14 @@ public class GUI extends JFrame implements ActionListener {
         maleRadioButton.setSelected(true);
         maleRadioButton.setSize(75, inputItemHeight);
         maleRadioButton.setLocation(210, row3Y);
+        maleRadioButton.addItemListener(e -> ticketPrice.setText(String.format("Ticket Price: $%.2f", calculatePrice())));
         c.add(maleRadioButton);
 
         femaleRadioButton.setFont(new Font("Arial", Font.PLAIN, 15));
         femaleRadioButton.setSelected(false);
         femaleRadioButton.setSize(80, inputItemHeight);
         femaleRadioButton.setLocation(285, row3Y);
+        femaleRadioButton.addItemListener(e -> ticketPrice.setText(String.format("Ticket Price: $%.2f", calculatePrice())));
         c.add(femaleRadioButton);
 
         genderButtonGroup.add(maleRadioButton);
@@ -201,16 +206,20 @@ public class GUI extends JFrame implements ActionListener {
         dobMonthField.setFont(new Font("Arial", Font.PLAIN, 15));
         dobMonthField.setSize(50, inputItemHeight);
         dobMonthField.setLocation(550, row3Y);
+        dobMonthField.addItemListener(e -> ticketPrice.setText(String.format("Ticket Price: $%.2f", calculatePrice())));
         c.add(dobMonthField);
 
         dobDateField.setFont(new Font("Arial", Font.PLAIN, 15));
         dobDateField.setSize(50, inputItemHeight);
         dobDateField.setLocation(600, row3Y);
+        dobDateField.addItemListener(e -> ticketPrice.setText(String.format("Ticket Price: $%.2f", calculatePrice())));
         c.add(dobDateField);
 
         dobYearField.setFont(new Font("Arial", Font.PLAIN, 15));
         dobYearField.setSize(70, inputItemHeight);
         dobYearField.setLocation(650, row3Y);
+        dobYearField.addItemListener(e -> ticketPrice.setText(String.format("Ticket Price: $%.2f", calculatePrice())));
+        dobYearField.setSelectedIndex(20);
         c.add(dobYearField);
 
         originLabel.setFont(new Font("Arial", Font.PLAIN, 20));
@@ -221,6 +230,7 @@ public class GUI extends JFrame implements ActionListener {
         originField.setFont(new Font("Arial", Font.PLAIN, 15));
         originField.setSize(190, inputItemHeight);
         originField.setLocation(190, row4Y);
+        originField.addItemListener(e -> ticketPrice.setText(String.format("Ticket Price: $%.2f", calculatePrice())));
         c.add(originField);
 
         destinationLabel.setFont(new Font("Arial", Font.PLAIN, 20));
@@ -232,6 +242,7 @@ public class GUI extends JFrame implements ActionListener {
         destinationField.setSize(190, inputItemHeight);
         destinationField.setLocation(540, row4Y);
         destinationField.setSelectedIndex(1);
+        destinationField.addItemListener(e -> ticketPrice.setText(String.format("Ticket Price: $%.2f", calculatePrice())));
         c.add(destinationField);
 
         departureTimeLabel.setFont(new Font("Arial", Font.PLAIN, 20));
@@ -285,6 +296,13 @@ public class GUI extends JFrame implements ActionListener {
         printButton.setLocation(400, row7Y);
         printButton.addActionListener(printActionListener);
         c.add(printButton);
+
+        ticketPrice.setFont(new Font("Arial", Font.PLAIN, 15));
+        ticketPrice.setSize(200, inputItemHeight);
+        ticketPrice.setLocation(600, row7Y);
+        c.add(ticketPrice);
+
+        ticketPrice.setText(String.format("Ticket Price: $%.2f", calculatePrice()));
 
         for (var item : c.getComponents()) {
             if (item instanceof JComboBox<?>) {

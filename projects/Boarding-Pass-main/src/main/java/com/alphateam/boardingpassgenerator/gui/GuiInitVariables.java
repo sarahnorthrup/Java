@@ -1,7 +1,6 @@
 package com.alphateam.boardingpassgenerator.gui;
 
 import javax.swing.*;
-import java.util.Map;
 import java.util.stream.IntStream;
 import static com.alphateam.boardingpassgenerator.gui.utils.AirportDataImporter.*;
 
@@ -27,6 +26,7 @@ public class GuiInitVariables {
     public static final JLabel flightDateLabel = new JLabel("Flight Date");
     public static final JButton submitButton = new JButton("Purchase");
     public static final JButton printButton = new JButton("Print");
+    public static final JLabel ticketPrice = new JLabel("Ticket Price: $0.00");
 
     protected static final String[] locations = airports
             .keySet()
