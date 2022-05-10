@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-size: 28px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: rgba(252, 255, 235, 0.829);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #7fa2a5;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2>Best Website</h2>
+  <p>Scroll down to see more of this awesome website.</p>
+</div>
+
+<ul>
+    <li><a class="active" href="website.html">Home</a></li>
+    <li><a href="funstuff.html">Fun Stuff</a></li>
+    <li><a href="randomstuff.html">Random Stuff</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
+
+<h3>Contact</h3>
+<p>The navbar will <strong>stick</strong> to the top when you reach its scroll position.</p>
+<p><strong>Note:</strong> Internet Explorer do not support sticky positioning and Safari requires a -webkit- prefix.</p>
+<form>
+	<table>
+		<tr>
+			<td>
+				Email Address:
+			</td>
+
+			<td>
+				<input type=”mail”  placeholder=”Email” name=””>
+			</td>
+		</tr>
+<tr>
+<td>
+				First Name:
+			</td>
+
+			<td>
+				<input type=”First Name” placeholder=”First Name” First Name=””>
+			</td>
+		</tr>
+        <tr>
+            <td>
+                            Last Name:
+                        </td>
+            
+                        <td>
+                            <input type=”Last Name” placeholder=”Last Name” Last Name=””>
+                        </td>
+                    </tr>
+	</table>
+    <a href="#" class="button">Submit</a>
+</form> 
+</body>
+</html>
